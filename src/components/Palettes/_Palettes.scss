@@ -1,8 +1,9 @@
 .palette-holder {
-	background-color: #F8EFEF;
+	background-color: hsl(0, 39%, 95%);
 	width: 100%;
 	min-height: 200px;
 	height: 100%;
+	padding-left: 10px;
 }
 
 .picked-color {
@@ -14,15 +15,25 @@
 .color-holder {
 	display: flex;
 	padding-top: 20px;
+	margin: 3px;
 }
 
 .palette-container {
 	display: flex;
 }
 
-.delete-btn {
+.delete-btn,
+.add-palette-btn {
 	border-radius: 5px;
 	height: 25px;
 	width: 100px;
-	margin: 3px;
+	margin: 5px;
+	cursor: pointer;
 }
+
+.palette-name {
+	font-size: 16px;
+	letter-spacing: 1px;
+	margin: 10px;
+}
+

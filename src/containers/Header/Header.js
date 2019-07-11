@@ -39,8 +39,8 @@ export class Header extends Component {
 	render() {
 		return(
 			<main>
-				<header>
-					<h1>Color Catcher</h1>
+				<header className='header-container'>
+					<h1 className='header-title'>Color Catcher</h1>
 					<button className='generate' onClick={this.handleClick} >Generate Colors</button>
 				</header>
 			</main>
