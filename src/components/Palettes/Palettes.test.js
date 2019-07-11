@@ -123,23 +123,95 @@ describe('Palettes', () => {
 	
 
 	describe('mapStateToProps', () => {
-		it.skip('should return a project object', () => {
-			let state = {
+		it('should return a project object', () => {
+			const mockState = {
 				project: {
 							name: "project one",
 							id: 1
-						}
+						},
+				palette: [
+			{	locked: false,
+				color: "#816379"
+			},
+			{ locked: false,
+				color: "#816379"
+			},
+			{ locked: false,
+				color: "#816379"
+			},
+			{	locked: false,
+				color: "#816379"
+			},
+			{ locked: false,
+				color: "#816379"
+			}
+		],
+		palettes: [
+		{	color_1: "CF71BD",
+			color_2: "D09B24",
+			color_3: "0C2A28",
+			color_4: "CC3EDC",
+			color_5: "816379",
+			name: "hi there",
+			project_id: 30,
+			id: 40},
+		{	color_1: "CF71BB",
+			color_2: "D09B22",
+			color_3: "002A28",
+			color_4: "CC3EDC",
+			color_5: "886379",
+			name: "bye there",
+			project_id: 31,
+			id: 41}
+		]
 			}
 				
 			const expected = {
+				project: {
 							name: "project one",
 							id: 1
-						}
+						},
+				palette: [
+			{	locked: false,
+				color: "#816379"
+			},
+			{ locked: false,
+				color: "#816379"
+			},
+			{ locked: false,
+				color: "#816379"
+			},
+			{	locked: false,
+				color: "#816379"
+			},
+			{ locked: false,
+				color: "#816379"
+			}
+		],
+		palettes: [
+		{	color_1: "CF71BD",
+			color_2: "D09B24",
+			color_3: "0C2A28",
+			color_4: "CC3EDC",
+			color_5: "816379",
+			name: "hi there",
+			project_id: 30,
+			id: 40},
+		{	color_1: "CF71BB",
+			color_2: "D09B22",
+			color_3: "002A28",
+			color_4: "CC3EDC",
+			color_5: "886379",
+			name: "bye there",
+			project_id: 31,
+			id: 41}
+		]
+			}
 
-			const mappedProps = mapStateToProps(state)
+			const mappedProps = mapStateToProps(mockState)
 
 
-			expect(mappedProps).toBe(expected)
+			expect(mappedProps).toEqual(mockState)
 		});
 	});
 
@@ -162,14 +234,14 @@ describe('Palettes', () => {
 				color: "#816379"
 			}
 		]
-		const mockDispatch = jest.fn();
-		const actionToDispatch = addPalette(mockPalette);
+			const mockDispatch = jest.fn();
+			const actionToDispatch = addPalette(mockPalette);
 
-		const mappedProps = mapDispatchToProps(mockDispatch)
+			const mappedProps = mapDispatchToProps(mockDispatch)
 
-		mappedProps.addPalette(mockPalette)
-		expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
-		})
+			mappedProps.addPalette(mockPalette)
+			expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
+		});
 		
 
 		it('should call dispatch of deletePalette', () => {
@@ -182,7 +254,6 @@ describe('Palettes', () => {
 		mappedProps.deletePalette(mockId)
 
 		expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
-	})
-		})
-
-	})
+		});
+	});
+});
