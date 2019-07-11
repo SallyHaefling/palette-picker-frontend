@@ -67,15 +67,56 @@ describe('Palettes', () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
-	it('should handleChange', () => {
-		const mockNameEvent = {
-			target: {
-				value: 'Palette One'
-			}
-		};
+	describe('handleChange', () => {
+		it('should handle the change of name', () => {
+			const mockNameEvent = {
+				target: {
+					value: 'Palette One'
+				}
+			};
 
-		wrapper.instance().handleChange(mockNameEvent);
-		expect(wrapper.state().name).toEqual('Palette One')
+			wrapper.instance().handleChange(mockNameEvent);
+			expect(wrapper.state().name).toEqual('Palette One')
+		});
 	});
+
+	describe('addPalette', () => {
+		it('should call post palette', () => {
+			const newPalette = {	
+				color_1: "CF71BD",
+				color_2: "D09B24",
+				color_3: "0C2A28",
+				color_4: "CC3EDC",
+				color_5: "816379",
+				name: "hi there",
+				project_id: 30,
+				id: 40
+			}
+			wrapper.instance().postPalette = jest.fn();
+			wrapper.instance().addPalette();
+			expect(wrapper.instance().postPalette).toHaveBeenCalled();
+		});
+	});
+
+	describe('postPalette', () => {
+		it.skip('should have a post fetch', () => {
+
+		});
+	});
+
+	describe('deletePalette', () => {
+		it.skip('should call a delete fetch', () => {
+
+		});
+		it('should dispatch a delete palette action', () => {
+
+			const paletteIdToDelete = 1;
+			wrapper.instance().deletePalette = jest.fn();
+
+			wrapper.instance().deletePalette = jest.fn()
+			wrapper.instance().deletePalette()
+			expect(wrapper.instance().deletePalette).toHaveBeenCalled()
+		})
+	})
 
 });
