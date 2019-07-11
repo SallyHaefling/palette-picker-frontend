@@ -69,11 +69,11 @@ export class Palettes extends Component {
 		const displayInput = this.props.project.name && createPaletteInput
 
 		const displayPalettes = matchingPalettes && matchingPalettes.map(palette => {
-
+			console.log('palette id:', palette.id)
 				return (
-					<div className='palette-container' key={palette.id} id={palette.id}>
+					<div className='palette-container' key={palette.id}>
 						<h2>{palette.name}</h2>
-						<div className='color-holder'>
+						<div className='color-holder' id={palette.id}>
 						<div className='picked-color' style={{backgroundColor: `#${palette.color_1}`}}>
 						</div>
 						<div className='picked-color' style={{backgroundColor: `#${palette.color_2}`}}>
@@ -84,7 +84,7 @@ export class Palettes extends Component {
 						</div>
 						<div className='picked-color' style={{backgroundColor: `#${palette.color_5}`}}>
 						</div>
-						<button class = 'delete-btn' onClick={this.deletePalette}>Delete Palette</button>
+						<button className = 'delete-btn' onClick={this.deletePalette}>Delete Palette</button>
 						</div>
 				</div>
 				);
@@ -95,9 +95,6 @@ export class Palettes extends Component {
 			<div className='palette-holder'>
 				<h1>{this.props.project.name}</h1>
 				{displayInput}
-
-				<input placeholder='Name your palette!' type='text' onChange={this.handleChange} value={this.state.name} />
-				<button onClick={this.addPalette}>Add Palette</button>
 
 				{displayPalettes}
 			</div>
