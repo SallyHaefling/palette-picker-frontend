@@ -19,7 +19,6 @@ export class Palettes extends Component {
 	addPalette = () => {
 		const colors = this.props.palette.reduce((acc, colorObject, index) => {
 			acc[`color_${index+1}`] = colorObject.color.slice(1)
-			// ^^ making key with color 1,2,3,4,5 and assigning to numbers without #
 			return acc
 		}, {})
 		

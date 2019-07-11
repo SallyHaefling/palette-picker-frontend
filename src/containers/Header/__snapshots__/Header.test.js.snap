@@ -2,8 +2,12 @@
 
 exports[`Header should match snapshot 1`] = `
 <main>
-  <header>
-    <h1>
+  <header
+    className="header-container"
+  >
+    <h1
+      className="header-title"
+    >
       Color Catcher
     </h1>
     <button
