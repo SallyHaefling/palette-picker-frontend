@@ -1,11 +1,27 @@
-header {
+.header-container {
 	display: flex;
 	justify-content: space-between;
-	background-color: #EF6A6A;
+	background-color: hsl(0, 77%, 71%);
 }
 
 .generate {
-	height: 20px;
-	margin-top: 10px;
-	
+	border: 1px solid black;
+	border-radius: 5px;
+	font-size: 16px;
+	height: 45px;
+	padding: 2px;
+	width: 100px;
+	margin: 40px;
+	cursor: pointer;
+	&:hover {
+		box-shadow: 5px 5px 5px black;
+		transition: .6s;
+}
+}
+
+.header-title {
+	font-family: 'Kalam', cursive;
+	margin-left: 10px;
+	font-size: 40px;
+	letter-spacing: 1px;
 }
