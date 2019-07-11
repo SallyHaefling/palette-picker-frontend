@@ -56,7 +56,7 @@ export class Palettes extends Component {
 
 
 	render() {
-		const matchingPalettes = this.props.palettes.length && this.props.palettes.filter(palette => {
+		const matchingPalettes = this.props.palettes && this.props.palettes.filter(palette => {
 			return palette.project_id === this.props.project.id
 		});
 
@@ -69,7 +69,6 @@ export class Palettes extends Component {
 		const displayInput = this.props.project.name && createPaletteInput
 
 		const displayPalettes = matchingPalettes && matchingPalettes.map(palette => {
-			console.log('palette id:', palette.id)
 				return (
 					<div className='palette-container' key={palette.id}>
 						<h2>{palette.name}</h2>
