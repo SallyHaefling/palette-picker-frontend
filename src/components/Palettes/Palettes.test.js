@@ -67,4 +67,15 @@ describe('Palettes', () => {
 		expect(wrapper).toMatchSnapshot();
 	});
 
+	it('should handleChange', () => {
+		const mockNameEvent = {
+			target: {
+				value: 'Palette One'
+			}
+		};
+
+		wrapper.instance().handleChange(mockNameEvent);
+		expect(wrapper.state().name).toEqual('Palette One')
+	});
+
 });
