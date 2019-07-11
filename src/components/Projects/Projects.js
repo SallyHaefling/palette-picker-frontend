@@ -76,8 +76,8 @@ export class Projects extends Component {
 			return (
 				<div data-key={project.id} key={project.id}>
 					<h2 className='project-name' onClick={this.chooseProject}>{project.name}</h2>
-					<button onClick={this.deleteProject}>
-						Delete
+					<button className='project-delete-btn' onClick={this.deleteProject}>
+						Delete Project
 					</button>
 				</div> 
 			)
@@ -86,14 +86,15 @@ export class Projects extends Component {
 		return (
 			<div className='project-holder'>
 				<form className='project-form'> 
-					<label>Name Project</label>
+					<label>Name Your Project</label>
 					<input
+						className='name-proj-input'
 						type="text"
 	          onChange={this.handleChange}
 	          name='title'
 	          value={this.state.title}
 	         />
-					<button onClick={this.makeProject}>Create</button> 
+					<button className='create-btn' onClick={this.makeProject}>Create</button> 
 				</form>
 				<h1 className='projects-title'>Projects</h1>
 				{projectNames}
