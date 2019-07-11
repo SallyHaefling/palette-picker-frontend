@@ -60,6 +60,14 @@ export class Palettes extends Component {
 			return palette.project_id === this.props.project.id
 		});
 
+		const createPaletteInput =
+			<div> 
+				<input placeholder='Name your palette!' type='text' onChange={this.handleChange} value={this.state.name} />
+				<button onClick={this.addPalette}>Add Palette </button>
+			</div>
+
+		const displayInput = this.props.project.name && createPaletteInput
+
 		const displayPalettes = matchingPalettes && matchingPalettes.map(palette => {
 
 				return (
@@ -86,8 +94,11 @@ export class Palettes extends Component {
 		return (
 			<div className='palette-holder'>
 				<h1>{this.props.project.name}</h1>
+				{displayInput}
+
 				<input placeholder='Name your palette!' type='text' onChange={this.handleChange} value={this.state.name} />
 				<button onClick={this.addPalette}>Add Palette</button>
+
 				{displayPalettes}
 			</div>
 		);
