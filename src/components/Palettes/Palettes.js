@@ -95,6 +95,10 @@ export class Palettes extends Component {
 			<div className='palette-holder'>
 				<h1>{this.props.project.name}</h1>
 				{displayInput}
+
+				<input placeholder='Name your palette!' type='text' onChange={this.handleChange} value={this.state.name} />
+				<button onClick={this.addPalette}>Add Palette</button>
+
 				{displayPalettes}
 			</div>
 		);
