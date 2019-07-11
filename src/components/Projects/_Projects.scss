@@ -3,6 +3,7 @@
 	min-height: 200px;
 	height: 100%;
 	background-color: hsl(0, 77%, 71%);
+	overflow: scroll;
 }
 
 .name-proj-input {
@@ -25,6 +26,10 @@
 .projects-title,
 .project-name {
 	margin: 10px;
+}
+
+.project-name {
+	margin-top: 10px;
 }
 
 .project-name {

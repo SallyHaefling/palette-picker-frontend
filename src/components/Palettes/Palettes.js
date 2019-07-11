@@ -62,8 +62,8 @@ export class Palettes extends Component {
 
 		const createPaletteInput =
 			<div> 
-				<input placeholder='Name your palette!' type='text' onChange={this.handleChange} value={this.state.name} />
-				<button onClick={this.addPalette}>Add Palette </button>
+				<input className='palette-name' placeholder='Name your palette!' type='text' onChange={this.handleChange} value={this.state.name} />
+				<button className='add-palette-btn' onClick={this.addPalette}>Add Palette </button>
 			</div>
 
 		const displayInput = this.props.project.name && createPaletteInput
