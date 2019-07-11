@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Palettes } from './Palettes';
+import { Palettes, mapStateToProps, mapDispatchToProps } from './Palettes';
 import { addPalette, deletePalette } from '../../actions';
 
 describe('Palettes', () => {
@@ -14,8 +14,8 @@ describe('Palettes', () => {
 	beforeEach(() => {
 		mockAddPalette = jest.fn();
 		mockDeletePalette = jest.fn();
-		mockProject = {id: 29, name: "named Ryan"};
-		mockPalette = [
+		mockProject = {id: 29, name: "project"};
+		let mockPalette = [
 			{	locked: false,
 				color: "#816379"
 			},
@@ -107,6 +107,9 @@ describe('Palettes', () => {
 	describe('deletePalette', () => {
 		it.skip('should call a delete fetch', () => {
 
+  
+			})
+
 		});
 		it('should dispatch a delete palette action', () => {
 
@@ -116,7 +119,70 @@ describe('Palettes', () => {
 			wrapper.instance().deletePalette = jest.fn()
 			wrapper.instance().deletePalette()
 			expect(wrapper.instance().deletePalette).toHaveBeenCalled()
-		})
-	})
+		});
+	
 
-});
+	describe('mapStateToProps', () => {
+		it.skip('should return a project object', () => {
+			let state = {
+				project: {
+							name: "project one",
+							id: 1
+						}
+			}
+				
+			const expected = {
+							name: "project one",
+							id: 1
+						}
+
+			const mappedProps = mapStateToProps(state)
+
+
+			expect(mappedProps).toBe(expected)
+		});
+	});
+
+	describe('mapDispatchToProps', () => {
+		it('should call dispatch of addPalette', () => {
+			const mockPalette = [
+			{	locked: false,
+				color: "#816379"
+			},
+			{ locked: false,
+				color: "#816379"
+			},
+			{ locked: false,
+				color: "#816379"
+			},
+			{	locked: false,
+				color: "#816379"
+			},
+			{ locked: false,
+				color: "#816379"
+			}
+		]
+		const mockDispatch = jest.fn();
+		const actionToDispatch = addPalette(mockPalette);
+
+		const mappedProps = mapDispatchToProps(mockDispatch)
+
+		mappedProps.addPalette(mockPalette)
+		expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
+		})
+		
+
+		it('should call dispatch of deletePalette', () => {
+			const mockId = 1
+		const mockDispatch = jest.fn();
+		const actionToDispatch = deletePalette(mockId);
+
+		const mappedProps = mapDispatchToProps(mockDispatch)
+
+		mappedProps.deletePalette(mockId)
+
+		expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
+	})
+		})
+
+	})

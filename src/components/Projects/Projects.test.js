@@ -109,12 +109,11 @@ describe('Projects', () => {
 				]
 			};
 
-			const expected = { 
-				projects: [
+			const expected = 
 				{	name: 'project one',
 					id: 1
-				}
-			]
+				
+			
 		};
 		
 		const mappedProps = mapStateToProps(mockState);
