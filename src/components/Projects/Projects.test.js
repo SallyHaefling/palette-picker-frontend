@@ -9,6 +9,7 @@ describe('Projects', () => {
 	let mockDeleteProject;
 	let mockAddProject;
 	let mockProjects;
+	let mockProject;
 
 	beforeEach(() => {
 		mockAddProject = jest.fn();
@@ -18,6 +19,12 @@ describe('Projects', () => {
 			name: 'project one',
 			id: 1
 		}]
+		mockProjects = [	
+			{id: 30,
+				name: "hi"}, 
+			{id: 31,
+				name: "bye"} 	
+		]
 
 		wrapper = shallow(
 			<Projects 
@@ -25,6 +32,7 @@ describe('Projects', () => {
 				addProject={mockAddProject}
 				deleteProject={mockDeleteProject}
 				projects={mockProjects}
+				project={mockProject}
 			/>
 		);
 	});
@@ -82,7 +90,7 @@ describe('Projects', () => {
 	});
 
 	describe('mapStateToProps', () => {
-		it.skip('should return an array of objects', () => {
+		it('should return an array of objects', () => {
 			const mockState = {
 			palette: [
 				{	locked: false,
@@ -106,12 +114,29 @@ describe('Projects', () => {
 					{	name: 'project one',
 						id: 1
 					}
-				]
+				],
+				projects: [
+			{	id: 30,
+				name: "hi"}, 
+			{	id: 31,
+				name: "bye"} 
+		]
 			};
 
-			const expected = 
-				{	name: 'project one',
-					id: 1
+	const expected = { 
+		project: [
+			{
+				name: 'project one',
+				id: 1
+			}
+		],
+		projects: [
+			{	id: 30,
+				name: "hi"}, 
+			{	id: 31,
+				name: "bye"} 
+		]
+
 				
 			
 		};

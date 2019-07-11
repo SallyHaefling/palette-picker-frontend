@@ -30,14 +30,31 @@ exports[`Projects should match the snapshot 1`] = `
     Projects
   </h1>
   <div
-    data-key={1}
-    key="1"
+    data-key={30}
+    key="30"
   >
     <h2
       className="project-name"
       onClick={[Function]}
     >
-      project one
+      hi
+    </h2>
+    <button
+      className="project-delete-btn"
+      onClick={[Function]}
+    >
+      Delete Project
+    </button>
+  </div>
+  <div
+    data-key={31}
+    key="31"
+  >
+    <h2
+      className="project-name"
+      onClick={[Function]}
+    >
+      bye
     </h2>
     <button
       className="project-delete-btn"
