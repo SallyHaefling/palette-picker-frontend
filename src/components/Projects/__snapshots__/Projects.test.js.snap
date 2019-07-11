@@ -4,23 +4,29 @@ exports[`Projects should match the snapshot 1`] = `
 <div
   className="project-holder"
 >
-  <form>
+  <form
+    className="project-form"
+  >
     <label>
-      Name Project
+      Name Your Project
     </label>
     <input
+      className="name-proj-input"
       name="title"
       onChange={[Function]}
       type="text"
       value=""
     />
     <button
+      className="create-btn"
       onClick={[Function]}
     >
       Create
     </button>
   </form>
-  <h1>
+  <h1
+    className="projects-title"
+  >
     Projects
   </h1>
   <div
@@ -28,14 +34,16 @@ exports[`Projects should match the snapshot 1`] = `
     key="1"
   >
     <h2
+      className="project-name"
       onClick={[Function]}
     >
       project one
     </h2>
     <button
+      className="project-delete-btn"
       onClick={[Function]}
     >
-      Delete
+      Delete Project
     </button>
   </div>
 </div>
