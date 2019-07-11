@@ -1,68 +1,53 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Color Catcher
 
-## Available Scripts
+## Abstract:
 
-In the project directory, you can run:
+As a paired project, we created an app similar to [coolors](https://coolors.co/) where a user can add projects with unique names, add palettes with unique names to their projects, "catch"/"release" a specific color in each palette (locks a color and unlocks a color), remove a palette from a project, and remove a project. 
 
-### `npm start`
+Each API endpoint responds with JSON-formatted data and you can view the backend repository for this project [here](https://github.com/lboyer4/color-catcher-backend).
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Deployed on Heroku: [Color Catcher](https://color-catcher.herokuapp.com/)
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
 
-### `npm test`
+## Setup:
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+First, clone down the repo.
 
-### `npm run build`
+```bash
+git clone 
+```
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Once you have cloned the repo, install the library dependencies. Run:
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+```bash
+npm install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To run tests in the program, Run:
+```bash
+npm test
+```
 
-### `npm run eject`
+## Wireframes and photos of project:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<img width="626" alt="Screen Shot 2019-07-10 at 5 20 27 PM" src="https://user-images.githubusercontent.com/40863560/61019084-2a145000-a356-11e9-897b-6204591e75fa.png">
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![palettepicker-shot](https://user-images.githubusercontent.com/40863560/61022339-ab71df80-a362-11e9-8aa4-9c00301a5065.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Technologies used:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+* fetch API
+* ReactJS 
+* Redux 
+* PostgresSQL 11 
+* Knex (in backend repo)
+* Express
+* JSX 
+* SCSS
+* Enzyme/Jest
 
-## Learn More
+## Authors:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+[Sally Haefling](https://github.com/SallyHaefling)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+[Lauren Boyer](https://github.com/lboyer4)
